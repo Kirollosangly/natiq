@@ -1,0 +1,32 @@
+.navBg {
+    background-color: var(--main-color);
+    position: relative;
+}
+
+.navBg::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .2rem;
+    background-color: var(--sub-color);
+    left: 0;
+    bottom: 0;
+}
+
+.logo {
+    width: 4.2rem;
+}
+
+.natiq {
+    font-size: 1.5rem !important;
+}
+
+.linkText {
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+
+
+.linkText:hover {
+    color: var(--sub-color);
+}

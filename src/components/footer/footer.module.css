@@ -1,0 +1,19 @@
+.mainBg {
+    background-color: var(--main-color);
+    position: relative;
+}
+
+.mainBg::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .2rem;
+    background-color: var(--sub-color);
+    left: 0;
+    top: 0;
+}
+
+.iconWidth {
+    display: inline-block;
+    width: 1.8rem;
+}
