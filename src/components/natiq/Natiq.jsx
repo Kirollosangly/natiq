@@ -10,13 +10,16 @@ export default function Natiq() {
 
     const { natiqText, audioWave, loading, lastEcho } = useSelector(state => state.natiq)
     const [natiqAudio, setNatiqAudio] = useState(undefined)
-    const [natiqLastWord, setNatiqLastWord] = useState(undefined)
-
 
     const dispatch = useDispatch();
 
     const echoFunction = (word) => {
-        setNatiqLastWord(word)
+        const arabicWord = word;
+        console.log(word);
+        const utterance = new SpeechSynthesisUtterance(arabicWord);
+        utterance.lang = "ar";
+        speechSynthesis.speak(utterance);
+        speechSynthesis.speak(utterance);
     }
 
     useEffect(() => {
@@ -26,22 +29,17 @@ export default function Natiq() {
             audio.src = `data:audio/wav;base64,${regularBase64}`;
             setNatiqAudio(audio.src)
             audio.play();
-            echoFunction(lastEcho[lastEcho.length - 1][0])
         };
     }, [audioWave])
-
 
     useEffect(() => {
         setNatiqAudio(undefined)
         dispatch(changeAudioState())
     }, [])
 
-
     const submitText = (value) => {
         dispatch(connectNatiq(value))
     }
-
-
 
     const validateInput = (value) => {
         let error = ''
@@ -50,8 +48,6 @@ export default function Natiq() {
             error = "Please enter a valid Arabic letters";
         return error;
     }
-
-
 
     return <>
         {loading ? <Container fluid className={`${style.loadingScreen} d-flex justify-content-center align-items-center`}>
@@ -100,7 +96,10 @@ export default function Natiq() {
                                     </Row>
                                     {audioWave ? <Row>
                                         <Col>
-                                            <audio src={audioWave ? natiqAudio : ''} className='mt-4' controls autoPlay></audio>
+                                            <audio 
+                                                src={audioWave ? natiqAudio : ''} 
+                                                onEnded={() => { echoFunction(lastEcho[lastEcho.length - 1][0]) }} 
+                                                className='mt-4' controls autoPlay></audio>
                                         </Col>
                                     </Row> : ''}
                                 </Form>
