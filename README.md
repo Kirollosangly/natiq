@@ -10,6 +10,7 @@ Natiq is a web application designed to enhance your language learning experience
 - Responsive Design: The application is fully responsive and works well on different devices.
 - React-Bootstrap: a front-end framework that combines the ease of Bootstrap's UI components with the power of React, allowing developers to quickly create responsive and visually appealing web applications.
 - Bootstrap: A CSS framework for building responsive and mobile-first websites.
+- React Helmet: Is a library that provides React components to change and update the tags inside the <head> 
 
 # Also applied in the project dockerfile / docker-compose & unit testing technologies
 
