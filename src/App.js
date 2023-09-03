@@ -1,12 +1,12 @@
 import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Home from './components/home/Home';
 import About from './components/about/About';
 import Natiq from './components/natiq/Natiq';
 import Layout from './components/layout/Layout';
 import Error from './components/not-found/Error';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '', element: <Layout />, children: [
       { path: '', element: <Home /> },

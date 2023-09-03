@@ -1,11 +1,13 @@
-import style from './home.module.css'
 import React from 'react'
-import { Button, Container, Row, Col, Image } from 'react-bootstrap';
-import picture from '../../assets/images/natiqLogo.png'
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import picture from '../../assets/images/natiqLogo.png'
+import style from './home.module.css'
 
 export default function Home() {
     return <>
+        <Helmet><title>Natiq | Home</title></Helmet>
         <Container fluid>
             <div className={`${style.glassBg} py-4`}>
                 <Row>

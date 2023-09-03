@@ -1,9 +1,11 @@
-import { Container, Row, Col } from 'react-bootstrap'
-import style from './about.module.css'
 import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
+import style from './about.module.css'
 
 export default function About() {
     return <>
+        <Helmet><title>Natiq | About</title></Helmet>
         <Container fluid>
             <Row>
                 <h2>How It Works</h2>

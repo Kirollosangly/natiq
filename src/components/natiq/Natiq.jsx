@@ -5,6 +5,7 @@ import { Field, Formik, Form } from 'formik';
 import { changeAudioState, connectNatiq } from '../../state-management/Slice/natiq-slice';
 import gifPicture from '../../assets/images/gifLogo.gif'
 import style from './natiq.module.css'
+import { Helmet } from 'react-helmet';
 
 export default function Natiq() {
 
@@ -50,6 +51,7 @@ export default function Natiq() {
     }
 
     return <>
+        <Helmet><title>Natiq | App</title></Helmet>
         {loading ? <Container fluid className={`${style.loadingScreen} d-flex justify-content-center align-items-center`}>
             <div className='d-flex justify-content-center align-items-center'>
                 <Image src={gifPicture} className={`${style.loadingPic}`} />
