@@ -12,7 +12,7 @@ export default function Home() {
             <div className={`${style.glassBg} py-4`}>
                 <Row>
                     <Col md={8}>
-                        <p className='m-0 ps-5'>
+                        <p className='m-0 ps-md-5 text-center text-md-start'>
                             Natiq is a web application designed to enhance your language learning experience. With the power of advanced AI voice technology, our app allows you to input Arabic words, instantly
                             transforming them into clear and accurate vocalizations. But that's not all – we've added a unique twist! After pronouncing the word, our app provides an engaging <span className={`${style.echo} fw-semibold`}>"echo"</span> feature,
                             where the last word is repeated three times in succession.

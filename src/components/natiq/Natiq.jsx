@@ -84,26 +84,24 @@ export default function Natiq() {
                                         validate={validateInput}
                                         className={`${style.field} rounded-2 fs-5 px-3 py-2 text-black`} />
 
-                                    {errors.text && touched.text ? (
+                                    {errors.text && touched.text && (
                                         <div className={`warning my-2 text-danger fw-semibold w-100 `}>
                                             {errors.text}
                                         </div>
-                                    ) : (
-                                        ""
                                     )}
                                     <Row>
                                         <Col>
                                             <button type="submit" className={`${style.echoBtn} py-1 px-4 rounded-2 mt-4`}>Echo</button>
                                         </Col>
                                     </Row>
-                                    {audioWave ? <Row>
+                                    {audioWave && <Row>
                                         <Col>
-                                            <audio 
-                                                src={audioWave ? natiqAudio : ''} 
-                                                onEnded={() => { echoFunction(lastEcho[lastEcho.length - 1][0]) }} 
+                                            <audio
+                                                src={audioWave ? natiqAudio : ''}
+                                                onEnded={() => { echoFunction(lastEcho[lastEcho.length - 1][0]) }}
                                                 className='mt-4' controls autoPlay></audio>
                                         </Col>
-                                    </Row> : ''}
+                                    </Row>}
                                 </Form>
                             )}
                         </Formik>
