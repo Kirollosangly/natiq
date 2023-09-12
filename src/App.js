@@ -6,7 +6,7 @@ import Natiq from './components/natiq/Natiq';
 import Layout from './components/layout/Layout';
 import Error from './components/not-found/Error';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '', element: <Layout />, children: [
       { path: '', element: <Home /> },

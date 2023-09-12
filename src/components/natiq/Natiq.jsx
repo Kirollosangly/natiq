@@ -34,8 +34,13 @@ export default function Natiq() {
     }, [audioWave])
 
     useEffect(() => {
-        setNatiqAudio(undefined)
         dispatch(changeAudioState())
+    }, [])
+
+    useEffect(() => {
+        return () => {
+            dispatch(changeAudioState())
+        }
     }, [])
 
     const submitText = (value) => {

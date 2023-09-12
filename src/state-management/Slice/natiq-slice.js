@@ -32,8 +32,8 @@ const natiqSlice = createSlice({
         },
         [connectNatiq.fulfilled]: (state, action) => {
             state.audioWave = action.payload.data.wave;
-            state.loading = false;
             state.lastEcho = action.payload.data.durations;
+            state.loading = false;
         },
         [connectNatiq.rejected]: (state, action) => { }
     }

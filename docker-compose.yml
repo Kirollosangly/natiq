@@ -11,4 +11,21 @@ services:
     container_name: react_container
     command: npm start
 
+# build an image:--> docker-compose build
 # run command: docker-compose up
+
+
+
+
+
+# react_container  | One of your dependencies, babel-preset-react-app, is importing the
+# react_container  | "@babel/plugin-proposal-private-property-in-object" package without
+# react_container  | declaring it in its dependencies. This is currently working because
+# react_container  | "@babel/plugin-proposal-private-property-in-object" is already in your
+# react_container  | node_modules folder for unrelated reasons, but it may break at any time.
+# react_container  |
+# react_container  | babel-preset-react-app is part of the create-react-app project, which
+# react_container  | is not maintianed anymore. It is thus unlikely that this bug will
+# react_container  | ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+# react_container  | your devDependencies to work around this error. This will make this message
+# react_container  | go away.
